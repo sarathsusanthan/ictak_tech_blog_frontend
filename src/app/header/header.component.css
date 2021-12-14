@@ -1,0 +1,10 @@
+nav{
+    background-image: url("../../assets/images/black.jpg");
+}
+#drop{
+    color: rgb(255, 255, 255);
+}
+#drop:hover{
+   background-color: black;
+   font-weight: bold;
+}

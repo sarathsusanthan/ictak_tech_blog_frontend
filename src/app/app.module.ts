@@ -1,18 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FooterComponent } from './footer/footer.component';
+import { AdminComponent } from './admin/admin.component';
+import {HttpClientModule} from '@angular/common/http';
+import { PostService } from './post.service';
+import { SinglepostComponent } from './singlepost/singlepost.component';
+import { NewpostComponent } from './newpost/newpost.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    FooterComponent,
+    AdminComponent,
+    SinglepostComponent,
+    NewpostComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    CarouselModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

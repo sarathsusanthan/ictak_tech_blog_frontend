@@ -1,0 +1,223 @@
+<!-- category dropdown -->
+<div style="height: 70px;background-color: black;border-bottom: 1px solid white;border-top: 1px solid white;"> 
+  <li  class="nav-item dropdown">
+    <a style="color: white; font-size: 25px;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      CATEGORIES
+    </a>
+    <div class="d-flex">
+      <marquee style="position: relative;color: white;font-size: 16px;">Subscribe our news letter for getting latest tech contents.</marquee>
+      <marquee  style="position: relative;color: white;font-size: 16px;">Share your articles to millions of people by signingup</marquee>
+    </div>
+   
+    <ul style="background-color: rgba(0, 0, 0, 0.61);width: 100%;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <div style="background-color: rgba(0, 0, 0, 0.562);" class="container d-flex">
+  
+  
+        <div style="border: 2px solid white;width: 300px;"  class="card bg-dark text-white mx-3 my-5 dropdown-item">
+            <img height="200PX" src="../../assets/images/it.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h3 class="card-title">Information <br> Technology</h3>
+            
+            </div>
+          </div>
+          <div  style="border: 2px solid white;width: 300px;"  class="card bg-dark text-white dropdown-item  mx-3 my-5">
+            <img height="200PX" src="../../assets/images/space.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">SPACE</h5>
+             
+            </div>
+          </div>
+          <div  style="border: 2px solid white;width: 300px;"  class="card bg-dark text-white dropdown-item mx-3 my-5">
+            <img height="200PX" src="../../assets/images/electronics.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">ELECTRONICS</h5>
+              
+            </div>
+          </div>
+          <div style="border: 2px solid white;width: 300px;"  class="card bg-dark text-white dropdown-item mx-3 my-5">
+            <img height="200PX" src="../../assets/images/6.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 style="margin-left: 10%;" class="card-title">ROBOTICS</h5>
+              
+            </div>
+          </div>
+          <div style="border: 2px solid white;width: 300px;"  class="card bg-dark text-white my-5 dropdown-item mx-3">
+            <img height="200PX" src="../../assets/images/nano.png" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">NANO <br> TECHNOLOGY</h5>
+             
+            </div>
+          </div>
+          
+    </div>
+    
+                                
+    </ul>
+  </li>
+</div>
+
+<!-- video -->
+<div class="my-5" >
+  
+  <video width="100%" style="position:relative; height: 390px;" autoplay audio-muted loop src="https://player.vimeo.com/external/368730818.sd.mp4?s=c3953421878536e1a7db904cae7dae03e7bfad19&profile_id=139&oauth2_token_id=57447761"></video>
+ 
+</div>
+<!-- container of articles and news -->
+<div class=" d-flex">
+   <!-- news div start -->
+
+<div style="background-color: rgb(241, 241, 241); position: relative; height: 320px;width: 300px; margin-left: 30px;margin-top: -33%;">
+  <h5>
+  <marquee style="color: blue;" class="pt-3 mx-3">News Updates . . .</marquee>
+  </h5>
+ 
+ <div class="card-group">
+  <li>
+    <div class="card">
+      <img height="126px" src="../../assets/images/news1.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-title">Potentially Hazardous Asteroid Nereus Which Flew Past Earth Could Be Mined for Precious Metals Worth Billions <br>
+          <a target="_blank" rel="noopener noreferrer" href="https://gadgets.ndtv.com/science/news/asteroid-nereus-flyby-earth-mine-precious-metals-usd-5-billion-space-mining-2648678">Read more</a>
+        </p>
+      </div>
+    </div>
+  </li>
+
+</div>
+<div style="background-color: white;"><a class="mx-3" target="_blank" rel="noopener noreferrer"  href="https://gadgets.ndtv.com/news">More news</a></div>
+</div>  
+<!-- news div end -->
+ 
+<!-- gadgets div start -->
+  <div style="background-color: rgb(241, 241, 241); position: relative; height: 320px;width: 300px; margin-left: 55%; margin-right: 20px; margin-top: -33%;" >
+    <h5 style="color: blue;" class="text-center mt-2">
+    Gadgets
+    </h5>
+   
+   <div class="card-group" >
+    <li>
+      <div class="card">
+        <img height="126px" src="../../assets/images/phone.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-title">Roborock S7 Robot Vacuum cleaner<br>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B08VHXZZ22?ots=1&linkCode=ogi&tag=bp_links-20&ascsubtag=%5Bartid%7C2089.g.1962%5Bsrc%7C%5Bch%7C%5Blt%7C&th=1">Shop now</a>
+          </p>
+        </div>
+      </div>
+    </li>   
+  </div>
+  <div style="background-color: white;"><a class="mx-3" target="_blank" rel="noopener noreferrer"  href="https://www.bestproducts.com/tech/gadgets/g1962/smart-home-automation-products/">More gadgets</a></div>
+  </div> 
+</div>
+<!-- gadgets div end -->
+ <!-- articles card start --> 
+    
+<div class="my-5" style="margin-left: 25px;margin-right: 25px;">
+  <li *ngFor="let post of postdata">
+    <div style="border: 5px solid white;width: 900px;margin-left: 15%;" class="card-group">
+      <div  class="card mx-2">
+        <img [src]="post.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p>By {{post.author}} </p>
+          <small style="cursor: pointer; color: blue;" (click)="displaypost(post)">Read more</small>
+          <br><br>
+          
+        </div>
+       
+      </div>
+     
+    </div>
+  </li>
+  
+  
+  </div>
+
+<!-- article cards end -->
+<!-- container of articles and news end -->
+<!-- carousel start -->
+<section class="testimonial my-5 px-5 py-3" style="height: 300px; position: relative;  background-color: rgba(0, 0, 0, 0.705); margin-left:25px;margin-right:25px;" >
+  <div  style="height: 300px;position: relative;" class="containers">
+      <owl-carousel-o   [options]="customOptions">
+          <ng-template  carouselSlide>
+              <img style="float: left; border-radius: 50%; height: 200px;width: 200px;"  src="../../assets/images/test2.jpg" alt="">
+              <div  class="test-content text-center text-white">
+                <h2>John</h2>
+                <h3>Web Designer</h3>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco  laboris
+                    nisi ut aliquip ex ea commodo consequat."</p>
+
+            </div>
+          </ng-template>  
+         
+          <ng-template  carouselSlide>
+            <img style="float: left; border-radius: 50%; height: 200px;width: 200px;"  src="../../assets/images/test1.jpg" alt="">
+            <div class="test-content text-center text-white">
+              <h2>Sam</h2>
+              <h3>Web Developer</h3>
+              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat."</p>
+
+          </div>
+        </ng-template>  
+        <ng-template  carouselSlide>
+          <img style="float: left;  border-radius: 50%; height: 200px;width: 200px;"  src="../../assets/images/test3.png" alt="">
+          <div class="test-content text-center text-white">
+            <h2>Doyale</h2>
+            <h3>Graphic Designer</h3>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat."</p>
+
+        </div>
+      </ng-template>
+       
+      </owl-carousel-o>
+     </div>
+</section>
+
+<!-- carousel end -->
+<!-- feedback form start -->
+<div>
+  <div style="margin-left: 25px;" class="text-white my-5">
+    <form (ngSubmit)="check()" class="py-5" style="position: relative; background-color: rgba(0, 0, 0, 0.733);width: 500px;">
+      <h4 class="mx-5">Share Feedback</h4>
+      <div class="mb-3 px-5">
+        <label for="exampleInputEmail1"  class="form-label">Email address</label>
+        <input type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3 px-5">
+        <label for="">share your thoughts</label>
+        <textarea required name="" id="" cols="50" rows="3"></textarea>
+      </div>
+     
+      <button type="submit" class="btn btn-primary mx-5">Submit</button>
+    </form>
+  </div>
+  
+  <!-- feedback form end -->
+  <div style="margin-right: 25px; float: right; margin-top: -33%; height: 500px;" class="text-white">
+    <form (ngSubmit)="msg()" class="py-5" style="position: relative; background-color: rgba(0, 0, 0, 0.733);width: 500px;">
+      <h4 class="mx-5">Subscribe to get notification of latest tech contents</h4>
+      <div class="mb-3 px-5">
+        <label for="exampleInputEmail1"  class="form-label">Your Name</label>
+        <input type="text" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text text-white"></div>
+      </div>
+      <div class="mb-3 px-5">
+        <label for="exampleInputEmail1"  class="form-label">Email address</label>
+        <input type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
+      </div>
+    
+     
+      <button type="submit" class="btn btn-primary mx-5">Subscribe</button>
+    </form>
+  </div>
+</div>
