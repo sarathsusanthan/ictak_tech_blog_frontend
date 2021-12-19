@@ -1,0 +1,70 @@
+<!-- <div class='card'>
+  <div class='card-header'>
+ 
+  </div>
+  
+  <div class='card-body'>            
+    <div class='table-responsive'>
+      <table class='table'
+            *ngIf = 'posts && posts.length'>
+        <thead>
+          <tr>
+            
+            <th>image</th> 
+            <th>title</th>
+            <th>author</th>
+            <th>post description</th>
+            <th>category</th>
+            
+          </tr>
+         
+        </thead>
+        <tbody>  
+            <tr *ngFor='let post of posts'>
+              
+              <td><img 
+                [src] = 'post.image' 
+                [title] = 'post.title' 
+                [style.width.px] = 'imageWidth' 
+                [style.margin.px] = 'imageMargin'></td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.author }}</td>
+                <td>{{ post.post }}</td>
+                <td>{{ post.category }}</td>   
+               
+              </tr>              
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> -->
+
+<!-- articles card start --> 
+  
+<div class="my-5" style="margin-left: 25px;margin-right: 25px;">
+  <li *ngFor="let post of posts">
+    <div style="border: 5px solid white;width: 900px;margin-left: 15%;" class="card-group">
+      <div  class="card mx-2">
+        <img [src]="post.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">  {{post.title}}</h5>
+          <p> category :{{post.category}} </p>
+          <p>About:{{post.post}} </p>
+          <!-- <small style="cursor: pointer; color: blue;" (click)="displaypost(post)">Read more</small> -->
+          <br><br>
+          <button class="btn btn-outline-danger" (click)="deletePost(post)">Delete</button>
+
+          <button class="btn btn-outline-danger" (click)="edittrainerpost(post)" >update</button>
+        </div>
+       
+      </div>
+     
+    </div>
+  </li>
+  
+  
+  </div>
+  <!-- article cards end -->
+
+
+   
