@@ -13,6 +13,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { PostService } from './post.service';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { NewpostComponent } from './newpost/newpost.component';
+import { UserComponent } from './user/user.component';
+import { UsernewpostComponent } from './usernewpost/usernewpost.component';
+import { UserupdatepostComponent } from './userupdatepost/userupdatepost.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,10 @@ import { NewpostComponent } from './newpost/newpost.component';
     FooterComponent,
     AdminComponent,
     SinglepostComponent,
-    NewpostComponent
+    NewpostComponent,
+    UserComponent,
+    UsernewpostComponent,
+    UserupdatepostComponent
   ],
   imports: [
     BrowserModule,
