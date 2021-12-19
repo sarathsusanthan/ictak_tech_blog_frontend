@@ -1,0 +1,8 @@
+<div style="position: relative;background-color: rgba(0, 0, 0, 0.671);padding-top: 2%;padding-bottom: 5px;" >
+    <h2 style="margin-left: 10%;" class="my-5 text-white">Add new category</h2>
+</div>
+<form #catform="ngForm" style="position: relative; margin-bottom: 10%;border-radius: 7px;" (ngSubmit)="add()">
+    <input required class="mx-3" type="text" name="category" style="width: 500px;" [(ngModel)]="category.category" placeholder="Enter new category name">
+    <button [disabled]="catform.form.invalid" class="btn " id="bt" type="submit">Add</button>
+</form>
+  

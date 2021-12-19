@@ -7,17 +7,21 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul style="margin-left: 10%;" class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
+            <a class="nav-link" *ngIf="!auth.loggedIn()"  aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pending Approvals</a>
+            <a class="nav-link" *ngIf="auth.loggedIn()" aria-current="page" routerLink="/admin">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Add category</a>
-          </li>
-         
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/newpost">New post</a>
+
+          <li *ngIf="auth.loggedIn()"  class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Actions
+            </a>
+            <ul style="background-color: rgba(0, 0, 0, 0.61);" class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a id="drop"*ngIf="auth.loggedIn()" class="dropdown-item" href="#" >Pending Approvals</a></li>
+              <li><a id="drop" *ngIf="auth.loggedIn()" class="dropdown-item" routerLink="/category" >Add category</a></li> 
+              <li><a id="drop" *ngIf="auth.loggedIn()" class="dropdown-item" routerLink="/newpost" >New post</a></li>                          
+            </ul>
           </li>
           
           <!-- <li class="nav-item">
@@ -31,16 +35,26 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Contact us</a>
           </li>
-        
-          <li  class="nav-item dropdown">
+         
+
+          <li   class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul style="background-color: rgba(0, 0, 0, 0.61);" class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li  *ngFor="let i of cat"><a  id="drop" class="dropdown-item" (click)="category(i.category)" style="cursor:pointer;" >{{i.category}}</a></li>                         
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="auth.loggedIn()" (click)="logoutUser()" href="#">logout</a>
+          </li>
+          <li *ngIf="!auth.loggedIn()"  class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img height="40px" width="40px" src="../../assets/images/user.png" alt="">
             </a>
             <ul style="background-color: rgba(0, 0, 0, 0.61);" class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a id="drop" class="dropdown-item" href="#">Login</a></li>
-              <li><a id="drop" class="dropdown-item" href="#">Signup</a></li>
-              
-                                        
+              <li><a id="drop" class="dropdown-item" *ngIf="!auth.loggedIn()" routerLink="/login">Login</a></li>
+              <li><a id="drop" class="dropdown-item" *ngIf="!auth.loggedIn()" routerLink="/signup">Signup</a></li>                          
             </ul>
           </li>
         </ul>

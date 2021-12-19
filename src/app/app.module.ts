@@ -13,9 +13,19 @@ import {HttpClientModule} from '@angular/common/http';
 import { PostService } from './post.service';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { NewpostComponent } from './newpost/newpost.component';
+
 import { TrainerComponent } from './trainer/trainer.component';
 import { TrainerpostComponent } from './trainerpost/trainerpost.component';
 import { EdittrainerpostComponent } from './edittrainerpost/edittrainerpost.component';
+
+import { CategoryComponent } from './category/category.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { EditpostComponent } from './editpost/editpost.component';
+import { GroupComponent } from './group/group.component';
+import { AuthService } from './auth.service';
+import { SignupService } from './signup.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +35,17 @@ import { EdittrainerpostComponent } from './edittrainerpost/edittrainerpost.comp
     AdminComponent,
     SinglepostComponent,
     NewpostComponent,
+
     TrainerComponent,
     TrainerpostComponent,
-    EdittrainerpostComponent
+    EdittrainerpostComponent,
+
+    CategoryComponent,
+    SignupComponent,
+    LoginComponent,
+    EditpostComponent,
+    GroupComponent
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +56,7 @@ import { EdittrainerpostComponent } from './edittrainerpost/edittrainerpost.comp
     CarouselModule,
     HttpClientModule
   ],
-  providers: [PostService],
+  providers: [PostService,AuthService,SignupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
