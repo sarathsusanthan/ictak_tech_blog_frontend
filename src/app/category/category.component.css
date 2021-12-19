@@ -1,0 +1,9 @@
+#bt{
+   
+    background-color: rgb(6, 43, 255);
+    color: white;
+}
+#bt:hover{
+   
+    background-color: green;
+}

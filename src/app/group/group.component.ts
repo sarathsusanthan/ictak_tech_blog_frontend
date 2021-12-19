@@ -2,22 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { PostService } from '../post.service';
-
+import { PostModel } from './post.model';
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-group',
+  templateUrl: './group.component.html',
+  styleUrls: ['./group.component.css']
 })
-export class AdminComponent implements OnInit {
- postdata:any;
-  constructor(private post:PostService, private router:Router,public auth:AuthService) { }
+export class GroupComponent implements OnInit {
+  postdata:PostModel[]=[];
+ 
+  constructor(private post:PostService, private router:Router, public auth:AuthService) { }
 
   ngOnInit(): void {
     this.post.getpost()
     .subscribe((data)=>{
       this.postdata=JSON.parse(JSON.stringify(data));
-      console.log(this.postdata)
+     
+      var post=localStorage.getItem("category");
+      this.postdata=this.postdata.filter((p: any)=>p.category===post)
     })
+  
+    
   }
   displaypost(post:any){
     localStorage.setItem("singlePostId",post._id.toString());

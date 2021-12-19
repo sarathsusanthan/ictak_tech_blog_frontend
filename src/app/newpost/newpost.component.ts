@@ -15,12 +15,17 @@ export class NewpostComponent implements OnInit {
   category:'',
   image:''
  }
+
+ cat:any;
   constructor(private postservice:PostService, private router:Router) { }
 
   ngOnInit(): void {
+    this.postservice.getCat().subscribe((data)=>{
+      this.cat=JSON.parse(JSON.stringify(data))
+    })
   }
   newbook(){
-
+  
     this.postservice.addPost(this.newpost).
     subscribe((data:any)=>{
      

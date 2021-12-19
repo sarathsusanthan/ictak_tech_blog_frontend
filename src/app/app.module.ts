@@ -13,6 +13,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { PostService } from './post.service';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { NewpostComponent } from './newpost/newpost.component';
+import { CategoryComponent } from './category/category.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { EditpostComponent } from './editpost/editpost.component';
+import { GroupComponent } from './group/group.component';
+import { AuthService } from './auth.service';
+import { SignupService } from './signup.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +28,12 @@ import { NewpostComponent } from './newpost/newpost.component';
     FooterComponent,
     AdminComponent,
     SinglepostComponent,
-    NewpostComponent
+    NewpostComponent,
+    CategoryComponent,
+    SignupComponent,
+    LoginComponent,
+    EditpostComponent,
+    GroupComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +44,7 @@ import { NewpostComponent } from './newpost/newpost.component';
     CarouselModule,
     HttpClientModule
   ],
-  providers: [PostService],
+  providers: [PostService,AuthService,SignupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
