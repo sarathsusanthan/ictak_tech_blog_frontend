@@ -13,6 +13,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { PostService } from './post.service';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { NewpostComponent } from './newpost/newpost.component';
+import { TrainerComponent } from './trainer/trainer.component';
+import { TrainerpostComponent } from './trainerpost/trainerpost.component';
+import { EdittrainerpostComponent } from './edittrainerpost/edittrainerpost.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,10 @@ import { NewpostComponent } from './newpost/newpost.component';
     FooterComponent,
     AdminComponent,
     SinglepostComponent,
-    NewpostComponent
+    NewpostComponent,
+    TrainerComponent,
+    TrainerpostComponent,
+    EdittrainerpostComponent
   ],
   imports: [
     BrowserModule,
