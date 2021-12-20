@@ -13,11 +13,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { PostService } from './post.service';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { NewpostComponent } from './newpost/newpost.component';
-
-import { TrainerComponent } from './trainer/trainer.component';
-
-
-
 import { CategoryComponent } from './category/category.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
@@ -36,7 +31,7 @@ import { MypostComponent } from './mypost/mypost.component';
     AdminComponent,
     SinglepostComponent,
     NewpostComponent,
-    TrainerComponent,
+    
   
     CategoryComponent,
     SignupComponent,

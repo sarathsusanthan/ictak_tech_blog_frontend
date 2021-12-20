@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { NewpostComponent } from './newpost/newpost.component';
 import { SignupComponent } from './signup/signup.component';
 import { SinglepostComponent } from './singlepost/singlepost.component';
-import { TrainerComponent } from './trainer/trainer.component';
 
 import { MypostComponent } from './mypost/mypost.component';
 
@@ -19,7 +18,6 @@ const routes: Routes = [
   {path:'spost',component:SinglepostComponent},
   {path:'newpost',component:NewpostComponent},
   {path:'mypost',component:MypostComponent},
-  {path:'trainer',component:TrainerComponent}, 
   {path:'category',component:CategoryComponent},
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},

@@ -30,8 +30,10 @@ export class CategoryComponent implements OnInit {
     })
   }
   removeCat(i:any){
+    alert("category deleted successfully");
     this.post.removeCat(i._id).subscribe((data)=>{
       this.cat=this.cat.filter((p: any)=>p!=i)
+      this.router.navigate(['admin'])
     })
   }
 }
