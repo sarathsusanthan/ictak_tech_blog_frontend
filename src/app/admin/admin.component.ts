@@ -16,7 +16,7 @@ export class AdminComponent implements OnInit {
     this.post.getpost()
     .subscribe((data)=>{
       this.postdata=JSON.parse(JSON.stringify(data));
-      console.log(this.postdata)
+      
     })
   }
   displaypost(post:any){

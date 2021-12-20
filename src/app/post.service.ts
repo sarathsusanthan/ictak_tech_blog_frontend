@@ -34,4 +34,7 @@ export class PostService {
     return this.http.put("http://localhost:3000/updatepost",post)
     .subscribe((data)=>{console.log(data)})
   }
+  removeCat(id:any){
+    return this.http.delete("http://localhost:3000/deletecat/"+id)
+  }
 }

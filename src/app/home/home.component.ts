@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as Aos from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { AuthService } from '../auth.service';
 import { PostService } from '../post.service';
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { PostService } from '../post.service';
 })
 export class HomeComponent implements OnInit {
   postdata:any;
-  constructor(private post:PostService, private router:Router) { }
+  constructor(private post:PostService, private router:Router,public auth:AuthService) { }
 
   ngOnInit(): void {
     this.post.getpost()
@@ -47,6 +48,16 @@ export class HomeComponent implements OnInit {
   displaypost(post:any){
     localStorage.setItem("singlePostId",post._id.toString());
     this.router.navigate(['spost'])
+  }
+  editPost(post:any){
+    localStorage.setItem("editPostId",post._id.toString());
+    this.router.navigate(['edit'])
+  }
+  deletePost(post:any){
+    this.post.deletePost(post._id)
+    .subscribe((data)=>{
+      this.postdata=this.postdata.filter((p: any)=>p!=post)
+    })
   }
  check(){
    alert("Thanks for your feedback");

@@ -19,20 +19,24 @@ export class LoginComponent implements OnInit {
   loginUser(){
     this._auth.loginUser(this.User)
     .subscribe((data)=>{
+      console.log(data)
     if(data.mesg=="notfound"){
       alert("User not found");
       this.router.navigate(['login']);
     }
     else{
-      if(data.mesg=="user"){
-        alert("User");
+      if(data.role=="user"){
+        localStorage.setItem('username',this.User.uname)
+        localStorage.setItem('usertoken',data.mesg)
         this.router.navigate(['']);
       }
-      if(data.mesg=="trainer"){
-        alert("trainer");
-        this.router.navigate(['']);
+      if(data.role=="trainer"){
+        localStorage.setItem('username',this.User.uname)
+        localStorage.setItem('trainertoken',data.mesg)
+        this.router.navigate(['mypost']);
       }
       else{
+        localStorage.setItem('username',this.User.uname)
         localStorage.setItem('token',data.mesg)
         this.router.navigate(['admin']);
       }

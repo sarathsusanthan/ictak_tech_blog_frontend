@@ -29,6 +29,6 @@ export class EditpostComponent implements OnInit {
     console.log(this.newpost)
     this.post.updatepost(this.newpost);
     alert("Updated Successfully");
-    this.router.navigate(['admin'])
+    this.router.navigate([''])
   }
 }

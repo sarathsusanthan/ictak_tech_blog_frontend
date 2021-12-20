@@ -4,27 +4,23 @@ import { AuthService } from '../auth.service';
 import { PostService } from '../post.service';
 
 @Component({
-  selector: 'app-group',
-  templateUrl: './group.component.html',
-  styleUrls: ['./group.component.css']
+  selector: 'app-mypost',
+  templateUrl: './mypost.component.html',
+  styleUrls: ['./mypost.component.css']
 })
-export class GroupComponent implements OnInit {
-  postdata:any;
- 
+export class MypostComponent implements OnInit {
+ postdata:any;
   constructor(private post:PostService, private router:Router, public auth:AuthService) { }
-  newpost={
-    category:localStorage.getItem("category")
-   }
+
   ngOnInit(): void {
     this.post.getpost()
     .subscribe((data)=>{
       this.postdata=JSON.parse(JSON.stringify(data));
      
-      var post=localStorage.getItem("category");
-      this.postdata=this.postdata.filter((p: any)=>p.category===post)
+      var post=localStorage.getItem("username");
+      this.postdata=this.postdata.filter((p: any)=>p.user===post)
     })
   
-    
   }
   displaypost(post:any){
     localStorage.setItem("singlePostId",post._id.toString());
