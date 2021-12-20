@@ -8,19 +8,26 @@ import { PostService } from '../post.service';
   styleUrls: ['./newpost.component.css']
 })
 export class NewpostComponent implements OnInit {
+  
  newpost={
+  user:localStorage.getItem("username"),
   title:'',
   author:'',
   post:'',
   category:'',
   image:''
  }
+
+ cat:any;
   constructor(private postservice:PostService, private router:Router) { }
 
   ngOnInit(): void {
+    this.postservice.getCat().subscribe((data)=>{
+      this.cat=JSON.parse(JSON.stringify(data))
+    })
   }
+  
   newbook(){
-
     this.postservice.addPost(this.newpost).
     subscribe((data:any)=>{
      

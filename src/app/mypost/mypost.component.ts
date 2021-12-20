@@ -4,20 +4,23 @@ import { AuthService } from '../auth.service';
 import { PostService } from '../post.service';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-mypost',
+  templateUrl: './mypost.component.html',
+  styleUrls: ['./mypost.component.css']
 })
-export class AdminComponent implements OnInit {
+export class MypostComponent implements OnInit {
  postdata:any;
-  constructor(private post:PostService, private router:Router,public auth:AuthService) { }
+  constructor(private post:PostService, private router:Router, public auth:AuthService) { }
 
   ngOnInit(): void {
     this.post.getpost()
     .subscribe((data)=>{
       this.postdata=JSON.parse(JSON.stringify(data));
-      
+     
+      var post=localStorage.getItem("username");
+      this.postdata=this.postdata.filter((p: any)=>p.user===post)
     })
+  
   }
   displaypost(post:any){
     localStorage.setItem("singlePostId",post._id.toString());

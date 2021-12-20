@@ -1,0 +1,17 @@
+   <div class="container">
+    <div style="position: relative;background-color: rgba(0, 0, 0, 0.671);padding-top: 2%;padding-bottom: 30px;" >
+        <h2 style="margin-left: 10%;" class="my-5 text-white">Add new category</h2>
+    </div>
+    <form  #catform="ngForm" style="position: relative; margin-bottom: 10%;border-radius: 7px;background-color: #000000af;" (ngSubmit)="add()">
+        <input required class="mx-3" type="text" name="category" style="width: 500px;" [(ngModel)]="category.category" placeholder="Enter new category name">
+        <button [disabled]="catform.form.invalid" class="btn btn-outline-danger" id="bt" type="submit">Add</button>
+    </form>
+     
+        <div class="px-3 py-2" style="color: white; background-color: #000000af; position: relative;" class="mb-3">
+            <h3>Remove Categories</h3><br>
+            
+            <li  *ngFor="let i of cat">{{i.category}} <br> <button id="bt" style="margin-left: 20%;margin-top: -3%; " (click)="removeCat(i)"  class="btn btn-outline-danger">Remove</button></li>
+           
+           
+        </div>
+   </div>

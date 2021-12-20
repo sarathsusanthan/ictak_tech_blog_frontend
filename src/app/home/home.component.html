@@ -1,60 +1,4 @@
-<!-- category dropdown -->
-<div style="height: 70px;background-color: black;border-bottom: 1px solid white;border-top: 1px solid white;"> 
-  <li  class="nav-item dropdown">
-    <a style="color: white; font-size: 25px;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      CATEGORIES
-    </a>
-    <div class="d-flex">
-      <marquee style="position: relative;color: white;font-size: 16px;">Subscribe our news letter for getting latest tech contents.</marquee>
-      <marquee  style="position: relative;color: white;font-size: 16px;">Share your articles to millions of people by signingup</marquee>
-    </div>
-   
-    <ul style="background-color: rgba(0, 0, 0, 0.61);width: 100%;" class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <div style="background-color: rgba(0, 0, 0, 0.562);" class="container d-flex">
-  
-  
-        <div style="border: 2px solid white;width: 300px;"  class="card bg-dark text-white mx-3 my-5 dropdown-item">
-            <img height="200PX" src="../../assets/images/it.jpg" class="card-img" alt="...">
-            <div class="card-img-overlay">
-              <h3 class="card-title">Information <br> Technology</h3>
-            
-            </div>
-          </div>
-          <div  style="border: 2px solid white;width: 300px;"  class="card bg-dark text-white dropdown-item  mx-3 my-5">
-            <img height="200PX" src="../../assets/images/space.jpg" class="card-img" alt="...">
-            <div class="card-img-overlay">
-              <h5 class="card-title">SPACE</h5>
-             
-            </div>
-          </div>
-          <div  style="border: 2px solid white;width: 300px;"  class="card bg-dark text-white dropdown-item mx-3 my-5">
-            <img height="200PX" src="../../assets/images/electronics.jpg" class="card-img" alt="...">
-            <div class="card-img-overlay">
-              <h5 class="card-title">ELECTRONICS</h5>
-              
-            </div>
-          </div>
-          <div style="border: 2px solid white;width: 300px;"  class="card bg-dark text-white dropdown-item mx-3 my-5">
-            <img height="200PX" src="../../assets/images/6.jpg" class="card-img" alt="...">
-            <div class="card-img-overlay">
-              <h5 style="margin-left: 10%;" class="card-title">ROBOTICS</h5>
-              
-            </div>
-          </div>
-          <div style="border: 2px solid white;width: 300px;"  class="card bg-dark text-white my-5 dropdown-item mx-3">
-            <img height="200PX" src="../../assets/images/nano.png" class="card-img" alt="...">
-            <div class="card-img-overlay">
-              <h5 class="card-title">NANO <br> TECHNOLOGY</h5>
-             
-            </div>
-          </div>
-          
-    </div>
-    
-                                
-    </ul>
-  </li>
-</div>
+
 
 <!-- video -->
 <div class="my-5" >
@@ -110,6 +54,7 @@
   </div> 
 </div>
 <!-- gadgets div end -->
+<div class="py-2" style="position: relative; color: white;background-color: rgba(0, 0, 0, 0.692);text-align: center;height: 80px;"><h2>Latest Articles</h2></div>
  <!-- articles card start --> 
     
 <div class="my-5" style="margin-left: 25px;margin-right: 25px;">
@@ -122,7 +67,8 @@
           <p>By {{post.author}} </p>
           <small style="cursor: pointer; color: blue;" (click)="displaypost(post)">Read more</small>
           <br><br>
-          
+          <button class="btn btn-outline-primary mx-3" *ngIf="auth.loggedIn()" (click)="editPost(post)">Edit</button>
+        <button class="btn btn-outline-danger" *ngIf="auth.loggedIn()"  (click)="deletePost(post)">Delete</button>
         </div>
        
       </div>
