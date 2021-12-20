@@ -1,0 +1,79 @@
+<!-- <div style="position: relative;background-color: rgba(0, 0, 0, 0.671);padding-top: 2%;padding-bottom: 5px;" >
+  <h2 style="margin-left: 10%;" class="my-5 text-white">Welcome user</h2>
+
+ 
+<div class='card' style="position: relative; background-color: rgba(0, 0, 0, 0.65);color:white; margin-left: 10%;margin-right: 10%;">
+  <div class='card-header'>
+  
+  </div>
+  
+  <div class='card-body'>            
+    <div class='table-responsive'>
+      <table class='table'
+            *ngIf = 'posts && posts.length' style="color: white;">
+        <thead>
+          <tr>
+            <th>
+              <button class='btn btn-primary'
+              (click)='toggleImage()'>
+                {{showImage? 'Hide' : 'Show'}} Image
+              </button>
+            </th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Post</th>
+            <th>Category</th>
+          </tr>
+         
+        </thead>
+        <tbody>  
+            <tr *ngFor='let post of posts'>
+                <td><img *ngIf='showImage'
+                  [src] = 'post.image' 
+                  [title] = 'post.title'
+                  [style.width.px] = 'imageWidth' 
+                  [style.margin.px] = 'imageMargin'></td>
+                <td>{{ post.title }}</td>
+                <td>{{post.author }}</td>
+                <td>{{ post.post }}</td>
+                <td>{{ post.category }}</td>
+                 <td>
+                 
+                  <button class="btn btn-danger" style="cursor:pointer" (click)="deletePost(post)"> Delete</button>
+                </td> 
+              </tr>              
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+</div>
+ -->
+
+ <!-- articles card start --> 
+  
+<div class="my-5" style="margin-left: 25px;margin-right: 25px;">
+  <li *ngFor="let post of posts">
+    <div style="border: 5px solid white;width: 900px;margin-left: 15%;" class="card-group">
+      <div  class="card mx-2">
+        <img [src]="post.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <!-- <p>By {{post.author}} </p> -->
+          <p>About: {{post.post}} </p>
+          <p>Category: {{post.category}} </p>
+          <br>
+          <button class="btn btn-outline-danger" (click)="deletePost(post)">Delete</button> &nbsp;&nbsp;
+          <button class="btn btn-outline-warning" (click)="editPost(post)">Edit</button>
+        </div>
+       
+      </div>
+     
+    </div>
+  </li>
+  
+  
+  </div>
+  <!-- article cards end -->

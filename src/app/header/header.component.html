@@ -15,6 +15,11 @@
           <li class="nav-item">
             <a class="nav-link" *ngIf="auth.loggedIn()||auth.trainerloggedIn()" aria-current="page" routerLink="/mypost">My posts</a>
           </li>
+
+         
+          <li class="nav-item">
+            <!-- <a class="nav-link" routerLink="/usernewpost">New post</a> -->
+
           
 
           <li *ngIf="auth.loggedIn()||auth.trainerloggedIn()"  class="nav-item dropdown">
@@ -26,6 +31,7 @@
               <li><a id="drop" *ngIf="auth.loggedIn()" class="dropdown-item" routerLink="/category" >Add/Remove category</a></li> 
               <li><a id="drop" *ngIf="auth.loggedIn()||auth.trainerloggedIn()" class="dropdown-item" routerLink="/newpost" >New post</a></li>                          
             </ul>
+
           </li>
           
           <!-- <li class="nav-item">

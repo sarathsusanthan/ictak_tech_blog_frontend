@@ -13,6 +13,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { PostService } from './post.service';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { NewpostComponent } from './newpost/newpost.component';
+
+import { UserComponent } from './user/user.component';
+import { UsernewpostComponent } from './usernewpost/usernewpost.component';
+import { UserupdatepostComponent } from './userupdatepost/userupdatepost.component';
+
 import { CategoryComponent } from './category/category.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
@@ -21,6 +26,7 @@ import { GroupComponent } from './group/group.component';
 import { AuthService } from './auth.service';
 import { SignupService } from './signup.service';
 import { MypostComponent } from './mypost/mypost.component';
+
 
 @NgModule({
   declarations: [
@@ -31,14 +37,16 @@ import { MypostComponent } from './mypost/mypost.component';
     AdminComponent,
     SinglepostComponent,
     NewpostComponent,
-    
-  
+    UserComponent,
+    UsernewpostComponent,
+    UserupdatepostComponent,   
     CategoryComponent,
     SignupComponent,
     LoginComponent,
     EditpostComponent,
     GroupComponent,
     MypostComponent
+
 
   ],
   imports: [
