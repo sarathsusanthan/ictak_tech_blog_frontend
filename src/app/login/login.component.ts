@@ -28,14 +28,14 @@ export class LoginComponent implements OnInit {
       if(data.role=="user"){
         localStorage.setItem('username',this.User.uname)
         localStorage.setItem('usertoken',data.mesg)
-        this.router.navigate(['']);
+        this.router.navigate(['mypost']);
       }
       if(data.role=="trainer"){
         localStorage.setItem('username',this.User.uname)
         localStorage.setItem('trainertoken',data.mesg)
         this.router.navigate(['mypost']);
       }
-      else{
+      if(data.role=="admin"){
         localStorage.setItem('username',this.User.uname)
         localStorage.setItem('token',data.mesg)
         this.router.navigate(['admin']);

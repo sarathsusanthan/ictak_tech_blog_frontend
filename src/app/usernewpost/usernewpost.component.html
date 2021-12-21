@@ -14,14 +14,18 @@
       </div>
   
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Image</label>
+        <label for="exampleInputPassword1" class="form-label">Image Url</label>
         <input type="text"  name="P_image" [(ngModel)]="newpost.image"  class="form-control" id="exampleInputPassword1" required>
-        <!-- <input type="file" id="myFile" name="image" [(ngModel)]="newpost.image"  class="form-control"> <br> -->
+        
       </div>
   
-       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Category</label>
-        <input type="text"  name="P_cat" [(ngModel)]="newpost.category"  class="form-control" id="exampleInputPassword1" required>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Category </label><br>
+        
+        <select [(ngModel)]="newpost.category" style="width:100%" name="p_cat" id="">
+          <option *ngFor="let i of cat" [ngValue]="i.category">{{i.category}}</option>
+        </select>
+       
       </div>
     
       <div class="mb-3">

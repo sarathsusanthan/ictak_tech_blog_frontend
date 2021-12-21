@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PostService } from '../post.service';
 import { UserpostService } from '../userpost.service';
 
 
@@ -10,23 +11,28 @@ import { UserpostService } from '../userpost.service';
 })
 export class UsernewpostComponent implements OnInit {
   newpost={
+    user:localStorage.getItem("username"),
     title:'',
     author:'',
     post:'',
     category:'',
     image:''
    }
-  constructor(private postservice:UserpostService, private router:Router) { }
+   cat:any;
+  constructor(private userservice:UserpostService, private router:Router, private post:PostService) { }
 
   ngOnInit(): void {
+    this.post.getCat().subscribe((data)=>{
+      this.cat=JSON.parse(JSON.stringify(data))
+    })
   }
   newbook(){
 
-    this.postservice.addPost(this.newpost).
+    this.userservice.addPost(this.newpost).
     subscribe((data:any)=>{
      
-      alert("New Post Added");
-      this.router.navigate(['/user'])
+      alert("Post send for approval from admin");
+      this.router.navigate(['mypost'])
     })
   }
 }

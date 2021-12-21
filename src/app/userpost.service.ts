@@ -10,20 +10,14 @@ export class UserpostService {
   getposts(){
     return this.http.get("http://localhost:3000/userposts");
 }
-getpost(id:any){
- return this.http.get("http://localhost:3000/userpost/"+id);
-}
+
 addPost(post:any){
-    return this.http.post<any>("http://localhost:3000/usernewpost",post)
+    return this.http.post<any>("http://localhost:3000/usernewpost",post);
 }
 deletePost(id:any){
+  
     return this.http.delete("http://localhost:3000/deleteUserPost/"+id)
 }
 
-editPost(post:any)
-  {
-    console.log('client update')
-    return this.http.put("http://localhost:3000/userupdatepost",post)
-    .subscribe(data =>{console.log(data)})
-  }
+
 }

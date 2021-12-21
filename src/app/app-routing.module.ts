@@ -9,22 +9,20 @@ import { LoginComponent } from './login/login.component';
 import { NewpostComponent } from './newpost/newpost.component';
 import { SignupComponent } from './signup/signup.component';
 import { SinglepostComponent } from './singlepost/singlepost.component';
-import { UserComponent } from './user/user.component';
+
 import { UsernewpostComponent } from './usernewpost/usernewpost.component';
-import { UserupdatepostComponent } from './userupdatepost/userupdatepost.component';
+
 
 import { MypostComponent } from './mypost/mypost.component';
+import { PendingapprovalComponent } from './pendingapproval/pendingapproval.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'admin',component:AdminComponent},
   {path:'spost',component:SinglepostComponent},
   {path:'newpost',component:NewpostComponent},
-
-  {path:'user',component:UserComponent},
   {path:'usernewpost',component:UsernewpostComponent},
-  {path:'userupdatepost',component:UserupdatepostComponent},
-
+  {path:'approval',component:PendingapprovalComponent},
   {path:'mypost',component:MypostComponent},
   {path:'category',component:CategoryComponent},
   {path:'signup',component:SignupComponent},
