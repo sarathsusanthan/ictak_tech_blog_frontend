@@ -37,4 +37,7 @@ export class PostService {
   removeCat(id:any){
     return this.http.delete("http://localhost:3000/deletecat/"+id)
   }
+  existingcat(cat:any){
+    return this.http.post("http://localhost:3000/existing",cat);
+  }
 }
