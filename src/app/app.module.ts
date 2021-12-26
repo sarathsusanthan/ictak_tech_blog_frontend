@@ -23,6 +23,9 @@ import { AuthService } from './auth.service';
 import { SignupService } from './signup.service';
 import { MypostComponent } from './mypost/mypost.component';
 import { PendingapprovalComponent } from './pendingapproval/pendingapproval.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ContactService } from './contact.service';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -41,7 +44,9 @@ import { PendingapprovalComponent } from './pendingapproval/pendingapproval.comp
     EditpostComponent,
     GroupComponent,
     MypostComponent,
-    PendingapprovalComponent
+    PendingapprovalComponent,
+    ContactFormComponent,
+    AboutusComponent
 
 
   ],
@@ -54,7 +59,7 @@ import { PendingapprovalComponent } from './pendingapproval/pendingapproval.comp
     CarouselModule,
     HttpClientModule
   ],
-  providers: [PostService,AuthService,SignupService],
+  providers: [PostService,AuthService,SignupService,ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

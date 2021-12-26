@@ -15,6 +15,8 @@ import { UsernewpostComponent } from './usernewpost/usernewpost.component';
 
 import { MypostComponent } from './mypost/mypost.component';
 import { PendingapprovalComponent } from './pendingapproval/pendingapproval.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -28,7 +30,9 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
   {path:'edit',component:EditpostComponent},
-  {path:'categorywise',component:GroupComponent}
+  {path:'categorywise',component:GroupComponent},
+  { path:'contactus',component:ContactFormComponent },
+  {path:'aboutus',component:AboutusComponent}
 
 ];
 
