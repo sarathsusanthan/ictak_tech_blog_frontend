@@ -2,26 +2,26 @@
   <h2 style="margin-left: 10%;" class="my-5 text-white">Add new post</h2>
 </div>
 
-<form (ngSubmit)="newbook()" class="py-3 px-3 my-5 text-white" style="position: relative; background-color: rgba(0, 0, 0, 0.65);margin-left: 10%;margin-right: 10%;">
+<form (ngSubmit)="newbook()" #addpost="ngForm"  class="py-3 px-3 my-5 text-white" style="position: relative; background-color: rgba(0, 0, 0, 0.65);margin-left: 10%;margin-right: 10%;">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Title</label>
-      <input type="text" name="P_title" [(ngModel)]="newpost.title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input type="text" name="P_title" [(ngModel)]="newpost.title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required >
       
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Author name</label>
-      <input type="text"  name="P_author" [(ngModel)]="newpost.author"  class="form-control" id="exampleInputPassword1">
+      <input type="text"  name="P_author" [(ngModel)]="newpost.author"  class="form-control" id="exampleInputPassword1" required>
     </div>
 
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Image url</label>
-      <input type="text"  name="P_image" [(ngModel)]="newpost.image"  class="form-control" id="exampleInputPassword1">
+      <input type="text"  name="P_image" [(ngModel)]="newpost.image"  class="form-control" id="exampleInputPassword1" required>
     </div>
 
      <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Category </label><br>
+      <label for="exampleInputPassword1" class="form-label" >Category </label><br>
       
-      <select [(ngModel)]="newpost.category" style="width:100%" name="p_cat" id="">
+      <select [(ngModel)]="newpost.category" style="width:100%" name="p_cat" id="" required >
         <option *ngFor="let i of cat" [ngValue]="i.category">{{i.category}}</option>
       </select>
      
@@ -29,7 +29,7 @@
   
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Post</label><br>
-     <textarea name="p_post"[(ngModel)]="newpost.post" cols="139" rows="10"></textarea>
+     <textarea name="p_post"[(ngModel)]="newpost.post" cols="139" rows="10" required></textarea>
     </div>
-    <button type="submit" class="btn text-center btn-primary">Submit</button>
+    <button type="submit" [disabled]="addpost.form.invalid"  class="btn text-center btn-primary">Submit</button>
 </form>

@@ -9,7 +9,8 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FooterComponent } from './footer/footer.component';
 import { AdminComponent } from './admin/admin.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
+
 import { PostService } from './post.service';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { NewpostComponent } from './newpost/newpost.component';
@@ -23,6 +24,7 @@ import { AuthService } from './auth.service';
 import { SignupService } from './signup.service';
 import { MypostComponent } from './mypost/mypost.component';
 import { PendingapprovalComponent } from './pendingapproval/pendingapproval.component';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 
 @NgModule({
@@ -54,7 +56,12 @@ import { PendingapprovalComponent } from './pendingapproval/pendingapproval.comp
     CarouselModule,
     HttpClientModule
   ],
-  providers: [PostService,AuthService,SignupService],
+  providers: [PostService,AuthService,SignupService,
+  {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
