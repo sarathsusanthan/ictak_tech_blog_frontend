@@ -22,7 +22,7 @@
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Category </label><br>
         
-        <select [(ngModel)]="newpost.category" style="width:100%" name="p_cat" id="">
+        <select [(ngModel)]="newpost.category" style="width:100%" name="p_cat" id="" required>
           <option *ngFor="let i of cat" [ngValue]="i.category">{{i.category}}</option>
         </select>
        

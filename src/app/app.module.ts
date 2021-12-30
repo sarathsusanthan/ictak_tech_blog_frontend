@@ -24,7 +24,13 @@ import { AuthService } from './auth.service';
 import { SignupService } from './signup.service';
 import { MypostComponent } from './mypost/mypost.component';
 import { PendingapprovalComponent } from './pendingapproval/pendingapproval.component';
+
 import { TokenInterceptorService } from './token-interceptor.service';
+
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ContactService } from './contact.service';
+import { AboutusComponent } from './aboutus/aboutus.component';
+
 
 
 @NgModule({
@@ -43,7 +49,9 @@ import { TokenInterceptorService } from './token-interceptor.service';
     EditpostComponent,
     GroupComponent,
     MypostComponent,
-    PendingapprovalComponent
+    PendingapprovalComponent,
+    ContactFormComponent,
+    AboutusComponent
 
 
   ],
@@ -56,12 +64,16 @@ import { TokenInterceptorService } from './token-interceptor.service';
     CarouselModule,
     HttpClientModule
   ],
-  providers: [PostService,AuthService,SignupService,
+
+  providers: [PostService,AuthService,SignupService,ContactService,
   {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
     }],
+
+ 
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

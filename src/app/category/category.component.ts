@@ -22,11 +22,19 @@ export class CategoryComponent implements OnInit {
     })
   }
   add(){
-   
+ 
     this.post.addCategory(this.category).subscribe((data)=>{
-      alert("category added successfully");
+      if(data.mesg==false){
+        alert("Category already exist");
+        this.category.category='';
+        this.router.navigate(['category'])
+      }
+      if(data.mesg==true){
+        alert("category added successfully");
       this.category.category='';
       this.router.navigate(['admin'])
+      }
+      
     })
   }
   removeCat(i:any){
