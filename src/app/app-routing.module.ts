@@ -18,15 +18,19 @@ import { PendingapprovalComponent } from './pendingapproval/pendingapproval.comp
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 
+import { UserauthGuard } from './userauth.guard';
+import { NewpostauthGuard } from './newpostauth.guard';
+import { AuthGuard } from './auth.guard';
+
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'admin',component:AdminComponent},
+  {path:'admin',canActivate: [AuthGuard],component:AdminComponent},
   {path:'spost',component:SinglepostComponent},
-  {path:'newpost',component:NewpostComponent},
-  {path:'usernewpost',component:UsernewpostComponent},
-  {path:'approval',component:PendingapprovalComponent},
+  {path:'newpost',canActivate: [NewpostauthGuard],component:NewpostComponent},
+  {path:'usernewpost',canActivate: [UserauthGuard],component:UsernewpostComponent},
+  {path:'approval',canActivate: [AuthGuard],component:PendingapprovalComponent},
   {path:'mypost',component:MypostComponent},
-  {path:'category',component:CategoryComponent},
+  {path:'category',canActivate: [AuthGuard],component:CategoryComponent},
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
   {path:'edit',component:EditpostComponent},

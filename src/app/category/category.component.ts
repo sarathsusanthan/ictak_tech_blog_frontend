@@ -22,7 +22,7 @@ export class CategoryComponent implements OnInit {
     })
   }
   add(){
-   
+ 
     this.post.addCategory(this.category).subscribe((data)=>{
       if(data.mesg==false){
         alert("Category already exist");
