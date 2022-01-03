@@ -31,6 +31,7 @@ export class MypostComponent implements OnInit {
     this.router.navigate(['edit'])
   }
   deletePost(post:any){
+    alert("Post deleted successfully")
     this.post.deletePost(post._id)
     .subscribe((data)=>{
       this.postdata=this.postdata.filter((p: any)=>p!=post)

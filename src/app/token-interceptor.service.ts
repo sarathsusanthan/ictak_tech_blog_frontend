@@ -13,7 +13,20 @@ export class TokenInterceptorService implements HttpInterceptor {
   intercept(req:any,nxt:any)
   {
     let authService = this.injector.get(AuthService)
-    //  if(authService.loggedIn()){
+    //initial state without anyone loggedin
+     if(!authService.loggedIn()&&!authService.trainerloggedIn()&&!authService.userloggedIn()){
+    
+    let tokenizedReq = req.clone(
+      {
+        setHeaders:{
+          Authorization:`Bearer`
+        }
+      }
+    )
+    return nxt.handle(tokenizedReq)
+  }
+  //if admin is logged in
+  if(authService.loggedIn()){
     
     let tokenizedReq = req.clone(
       {
@@ -23,20 +36,33 @@ export class TokenInterceptorService implements HttpInterceptor {
       }
     )
     return nxt.handle(tokenizedReq)
-  // }
-
-  // if(authService.trainerloggedIn()){
+  }
+//if trainer is logged in
+  if(authService.trainerloggedIn()){
     
-  //   let tokenizedReq = req.clone(
-  //     {
-  //       setHeaders:{
-  //         Authorization:`Bearer ${authService. getTrainertoken()}`
-  //       }
-  //     }
-  //   )
-  //   return nxt.handle(tokenizedReq)
-  // }
+    let tokenizedReq = req.clone(
+      {
+        setHeaders:{
+          Authorization:`Bearer ${authService.getTrainertoken()}`
+        }
+      }
+    )
+    
+    return nxt.handle(tokenizedReq)
+  }
+  //if user logged in
+  if(authService.userloggedIn()){
   
+    let tokenizedReq = req.clone(
+      {
+        setHeaders:{
+          Authorization:`Bearer ${authService.getUsertoken()}`
+        }
+      }
+    )
+   
+    return nxt.handle(tokenizedReq)
+  }
 
 }
 

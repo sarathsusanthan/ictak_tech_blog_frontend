@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   loginUser(){
     this._auth.loginUser(this.User)
     .subscribe((data)=>{
-      console.log(data)
+      
     if(data.mesg=="notfound"){
       alert("User not found");
       this.router.navigate(['login']);

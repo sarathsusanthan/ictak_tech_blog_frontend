@@ -16,6 +16,9 @@ export class PostService {
   addPost(post:any){
        return this.http.post<any>("http://localhost:3000/newpost",post)
   }
+  addtrainerPost(post:any){
+    return this.http.post<any>("http://localhost:3000/trainerpost",post)
+  }
   deletePost(id:any){
        return this.http.delete("http://localhost:3000/delete/"+id)
   }

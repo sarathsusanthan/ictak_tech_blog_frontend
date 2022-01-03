@@ -30,6 +30,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactService } from './contact.service';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { TrainerpostComponent } from './trainerpost/trainerpost.component';
 
 
 
@@ -51,7 +52,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     MypostComponent,
     PendingapprovalComponent,
     ContactFormComponent,
-    AboutusComponent
+    AboutusComponent,
+    TrainerpostComponent
 
 
   ],

@@ -30,4 +30,5 @@ export class SinglepostComponent implements OnInit {
     })
     this.router.navigate(['']);
   }
+  
 }

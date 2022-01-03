@@ -21,6 +21,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { UserauthGuard } from './userauth.guard';
 import { NewpostauthGuard } from './newpostauth.guard';
 import { AuthGuard } from './auth.guard';
+import { TrainerpostComponent } from './trainerpost/trainerpost.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path:'edit',component:EditpostComponent},
   {path:'categorywise',component:GroupComponent},
   { path:'contactus',component:ContactFormComponent },
-  {path:'aboutus',component:AboutusComponent}
+  {path:'aboutus',component:AboutusComponent},
+  {path:'trainerpost',component:TrainerpostComponent}
 
 ];
 
