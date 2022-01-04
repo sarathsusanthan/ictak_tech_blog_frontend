@@ -28,16 +28,19 @@ export class LoginComponent implements OnInit {
       if(data.role=="user"){
         localStorage.setItem('username',this.User.uname)
         localStorage.setItem('usertoken',data.mesg)
+        localStorage.setItem('nam',data.nam)
         this.router.navigate(['mypost']);
       }
       if(data.role=="trainer"){
         localStorage.setItem('username',this.User.uname)
         localStorage.setItem('trainertoken',data.mesg)
+        localStorage.setItem('nam',data.nam)
         this.router.navigate(['mypost']);
       }
       if(data.role=="admin"){
         localStorage.setItem('username',this.User.uname)
         localStorage.setItem('token',data.mesg)
+        localStorage.setItem('nam',"admin")
         this.router.navigate(['admin']);
       }
     }

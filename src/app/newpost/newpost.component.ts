@@ -12,7 +12,7 @@ export class NewpostComponent implements OnInit {
  newpost={
   user:localStorage.getItem("username"),
   title:'',
-  author:'',
+  author:localStorage.getItem("nam"),
   post:'',
   category:'',
   image:''
