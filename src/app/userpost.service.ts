@@ -5,18 +5,18 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserpostService {
-
+  server_address: string = 'api';
   constructor(private http:HttpClient) { }
   getposts(){
-    return this.http.get("http://localhost:3000/userposts");
+    return this.http.get(`${this.server_address}/userposts`);
 }
 
 addPost(post:any){
-    return this.http.post<any>("http://localhost:3000/usernewpost",post);
+    return this.http.post<any>(`${this.server_address}/usernewpost`,post);
 }
 deletePost(id:any){
   
-    return this.http.delete("http://localhost:3000/deleteUserPost/"+id)
+    return this.http.delete(`${this.server_address}/deleteUserPost/`+id)
 }
 
 

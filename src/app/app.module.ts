@@ -31,6 +31,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactService } from './contact.service';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { TrainerpostComponent } from './trainerpost/trainerpost.component';
+import { CommentComponent } from './comment/comment.component';
+import { AdminmessageComponent } from './adminmessage/adminmessage.component';
 
 
 
@@ -53,7 +55,9 @@ import { TrainerpostComponent } from './trainerpost/trainerpost.component';
     PendingapprovalComponent,
     ContactFormComponent,
     AboutusComponent,
-    TrainerpostComponent
+    TrainerpostComponent,
+    CommentComponent,
+    AdminmessageComponent
 
 
   ],

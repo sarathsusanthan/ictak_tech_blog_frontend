@@ -26,7 +26,7 @@
     
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Post</label><br>
-       <textarea name="p_post"[(ngModel)]="newpost.post" cols="139" rows="10" required></textarea>
+       <textarea  style="max-width: 100%;" name="p_post"[(ngModel)]="newpost.post" cols="139" rows="10" required></textarea>
       </div>
       <button type="submit"  [disabled]="useraddpost.form.invalid" class="btn text-center btn-primary">Submit</button>
   </form>

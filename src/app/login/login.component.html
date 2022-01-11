@@ -1,11 +1,11 @@
 <app-header></app-header>
 <!-- FORM -->
-<form (ngSubmit)="loginUser()" style="position: relative;" class="my-5" #userlogin="ngForm" id="log">
+<form (ngSubmit)="loginUser()" style="position: relative; max-width: 100%;" class="my-5" #userlogin="ngForm" id="log">
     <h3 style="color: white;">Login</h3>
    
-    <input id="user" #user="ngModel" [class.is-invalid]="user.invalid" [(ngModel)]="User.uname" required type="text" name="username" placeholder="Enter Email id"><br>
+    <input id="user" style="max-width: 90%;" #user="ngModel" [class.is-invalid]="user.invalid" [(ngModel)]="User.uname" required type="text" name="username" placeholder="Enter Email id"><br>
     <small style="background-color: black;" [class.d-none]="user.valid||user.touched" class="text-danger">This field required</small><br><br>
-    <input id="pwd" #pas="ngModel" [class.is-invalid]="pas.invalid"  [(ngModel)]="User.password" required type="password" name="password" placeholder="Enter Password"><br><br>
+    <input id="pwd" style="max-width: 90%;" #pas="ngModel" [class.is-invalid]="pas.invalid"  [(ngModel)]="User.password" required type="password" name="password" placeholder="Enter Password"><br><br>
     <small style="background-color: black;" [class.d-none]="pas.valid||pas.touched" class="text-danger">This field required</small>
     <label id="loger"></label><br>
     <button id="logbut" [disabled]="userlogin.form.invalid" type="submit">Login</button><br><br>

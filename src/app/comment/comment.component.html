@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<div style="position: relative;background-color: rgba(0, 0, 0, 0.671);padding-top: 2%;padding-bottom: 5px;" >
+  <h2 style="margin-left: 10%;" class="my-5 text-white">Comment to user</h2>
+</div>
+
+<form (ngSubmit)="userComment()" #commentform="ngForm" style="background-color: black;position: relative;" class="mx-3 my-5 px-3 py-5">
+    <div class="mb-3">
+        
+       <textarea   placeholder="comment...." style="max-width: 100%;" name="p_post"[(ngModel)]="comment.message" cols="139" rows="10" required></textarea>
+      </div>
+      <button [disabled]="commentform.form.invalid" type="submit" class="btn btn-primary">send</button>
+</form>
+

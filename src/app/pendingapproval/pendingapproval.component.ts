@@ -20,20 +20,24 @@ export class PendingapprovalComponent implements OnInit {
     })
   }
   approve(post:any){
+    localStorage.setItem("userIdtocomment",post.user);
+    localStorage.setItem("titleTocomment",post.title)
     this.userservice.deletePost(post._id)
     .subscribe()
     this.post.addPost(post).
     subscribe((data:any)=>{
-     
-      alert("New Post Added");
-      this.router.navigate(['admin'])
+     alert("Post approved");
+
+      this.router.navigate(['comment'])
     })
   }
   reject(post:any){
-   
+    localStorage.setItem("userIdtocomment",post.user);
+    localStorage.setItem("titleTocomment",post.title)
+   alert("post rejected");
     this.userservice.deletePost(post._id)
     .subscribe((data)=>{
-    this.router.navigate(['admin'])
+    this.router.navigate(['comment'])
     })
   }
 }

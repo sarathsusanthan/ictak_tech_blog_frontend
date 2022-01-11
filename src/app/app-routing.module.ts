@@ -17,11 +17,12 @@ import { MypostComponent } from './mypost/mypost.component';
 import { PendingapprovalComponent } from './pendingapproval/pendingapproval.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-
+import {AdminmessageComponent} from './adminmessage/adminmessage.component';
 import { UserauthGuard } from './userauth.guard';
 import { NewpostauthGuard } from './newpostauth.guard';
 import { AuthGuard } from './auth.guard';
 import { TrainerpostComponent } from './trainerpost/trainerpost.component';
+import { CommentComponent } from './comment/comment.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -38,7 +39,9 @@ const routes: Routes = [
   {path:'categorywise',component:GroupComponent},
   { path:'contactus',component:ContactFormComponent },
   {path:'aboutus',component:AboutusComponent},
-  {path:'trainerpost',component:TrainerpostComponent}
+  {path:'trainerpost',component:TrainerpostComponent},
+  {path:'comment',component:CommentComponent},
+  {path:'adminmesag',component:AdminmessageComponent}
 
 ];
 

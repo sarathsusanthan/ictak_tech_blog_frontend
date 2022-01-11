@@ -61,8 +61,18 @@ export class HomeComponent implements OnInit {
   }
  check(){
    alert("Thanks for your feedback");
+   this.feedback.first="",
+   this.feedback.last="",
+   this.feedback.country="",
+   this.feedback.sub=""
  }
  msg(){
    alert("Thanks for subscribing");
+ }
+ feedback={
+   first:'',
+   last:'',
+   country:'',
+   sub:''
  }
 }

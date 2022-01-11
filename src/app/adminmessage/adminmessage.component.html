@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div>
+    <h2 style="background-color: rgba(0, 0, 0, 0.733);color: white;">Admin messages</h2><br>
+    <ul  *ngFor="let i of comment">
+        <li class="px-3 py-3 mx-5" style="max-width: 100%; background-color: rgba(0, 0, 0, 0.76);color: white;">
+            <h4>Post title: {{i.title}}</h4><br>
+            <h5>Message from admin</h5><br>
+             <p>{{i.message}}</p>
+        </li>
+    </ul>
+    
+</div>

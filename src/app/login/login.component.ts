@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit {
     .subscribe((data)=>{
       
     if(data.mesg=="notfound"){
+      this.User.uname="";
+      this.User.password=""
       alert("User not found");
       this.router.navigate(['login']);
     }

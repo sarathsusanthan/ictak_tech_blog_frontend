@@ -8,8 +8,8 @@ export class SignupService {
   server_address:string='api';
   constructor(private http:HttpClient) { }
   signupUser(user:any){
-    console.log(user)
-    return this.http.post<any>("http://localhost:3000/signup",{user})
+    
+    return this.http.post<any>(`${this.server_address}/signup`,{user})
     
   }
 }

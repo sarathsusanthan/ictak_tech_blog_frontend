@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
     {
       name:['',Validators.required],
       id:['',Validators.required],
+      qualification:[''],
       email: ['',[Validators.required,Validators.pattern('^[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}$')]],
       password: ['',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])[a-zA-Z0-9]{8,}')]]
       
@@ -23,17 +24,18 @@ export class SignupComponent implements OnInit {
   User={
     name:'',
     id:'',
+    qualification:'UNDER GRADUATE',
     email:'',
     password:''
   }
   author=['user','trainer'];
     
-  
+  qualification=['UNDER GRADUATE','POST GRADUATE','P.H.D']
 
   ngOnInit(): void {
   }
   signup(){
-   
+
     this.signupservice.signupUser(this.User)
     .subscribe((data)=>{
       
@@ -46,5 +48,22 @@ export class SignupComponent implements OnInit {
     });
    
   }
+  trainerverify(){
+    if(this.User.id=="trainer"){
+      return true;
 
+    }
+    else{
+      return false;
+    }
+  }
+  userverify(){
+    if(this.User.id=="user"){
+      return true;
+
+    }
+    else{
+      return false;
+    }
+  }
 }
